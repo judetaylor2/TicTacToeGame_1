@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 1127577927812462746}
   - component: {fileID: 3765359747022038924}
   - component: {fileID: -6622700056705682744}
-  - component: {fileID: -2830190857902678892}
+  - component: {fileID: 1462406535333884020}
+  - component: {fileID: 1348372731670872497}
+  - component: {fileID: 4228924653939263660}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -27,16 +29,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3072286911333030731}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: -0.00000093877316, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -307.78625, y: 1932.3663}
+  m_AnchoredPosition: {x: 303.16052, y: 1394.2793}
   m_SizeDelta: {x: 357, y: 214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1127577927812462746
@@ -60,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.10062885, b: 0.10062885, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -121,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -2830190857902678892}
-        m_TargetAssemblyTypeName: PlayerClick, Assembly-CSharp
-        m_MethodName: UseCard
+      - m_Target: {fileID: 1462406535333884020}
+        m_TargetAssemblyTypeName: Card, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -133,7 +135,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-2830190857902678892
+--- !u!114 &1462406535333884020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +144,79 @@ MonoBehaviour:
   m_GameObject: {fileID: 3072286911333030731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01135bccc74288646979ebe02e68e5c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 610383f7e29685545b7611768b809234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardIndex: 0
+  cardSprites:
+  - {fileID: 21300000, guid: eda617b7727404b4bbcbd9d8f047865c, type: 3}
+  - {fileID: 21300000, guid: 99bda9d29b8de6549bb8e64bf3933495, type: 3}
+  - {fileID: 21300000, guid: 1371d4f63eefd13479fb572dfc5d6a6d, type: 3}
+  - {fileID: 21300000, guid: b1ad64aa34a4d624699a494951f20373, type: 3}
+  - {fileID: 21300000, guid: 2add9ae37bd892b4194e4f7a758b579a, type: 3}
+  - {fileID: 21300000, guid: a57c1e2f1d8f3684a8eae373c543acf6, type: 3}
+  - {fileID: 21300000, guid: 36a17b0e94d972a47989fe3626f64709, type: 3}
+--- !u!95 &1348372731670872497
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072286911333030731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 175c5c0070e3d4f4c9c148a4642ddb9f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4228924653939263660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3072286911333030731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1462406535333884020}
+          m_TargetAssemblyTypeName: Card, Assembly-CSharp
+          m_MethodName: PlayAnimation
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1462406535333884020}
+          m_TargetAssemblyTypeName: Card, Assembly-CSharp
+          m_MethodName: PlayAnimation
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

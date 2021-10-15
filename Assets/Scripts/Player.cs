@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public Canvas mainCanvas;
     public GameObject currentItem;
     public GameObject[] cardSlotPositions;
-    GameObject[] cardSlot;
-
-    [HideInInspector] public int currentCardIndex;
+    [HideInInspector] public GameObject[] cardSlot;
     [HideInInspector] public bool isCardBeingUsed;
+
+    public GameObject cardItem;
+
+    public int currentCardIndex;
+    [HideInInspector] public int playerMoves;
+
+    [HideInInspector] public GameObject currentCard;
+
+    int playerCoins = 5;
+
+    public Text coinsUI;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +28,6 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         
         cardSlot = new GameObject[cardSlotPositions.Length];
-
-        for (int i = 0; i < 3; i++)
-        Debug.Log(cardSlot[i]);
 
     }
 
@@ -34,22 +41,38 @@ public class Player : MonoBehaviour
             currentItem.transform.position = transform.position;
         }
 
-        if (isCardBeingUsed)
-        {
-            
-        }
+        //Debug.Log(currentCardIndex);
+
+        coinsUI.text = "Coins: " + playerCoins;
     }
 
-    public void BuyCard(GameObject cardItem)
+    public void BuyCard(string s) //each input is seperated by a comma
     {
-        for (int i = 0; i < cardSlot.Length; i++)
+
+        string[] s1 = s.Split(',');
+        
+        int card = int.Parse(s1[0]);
+        int cost = int.Parse(s1[1]);
+
+
+        if (playerCoins >= cost)
         {
-            if (cardSlot[i] == null)
+            playerCoins -= cost;
+            for (int i = 0; i < cardSlot.Length; i++)
             {
-                //Debug.Log(cardSlot[i] + "   " + cardSlotPositions[i]);
-                cardSlot[i] = Instantiate(cardItem, cardSlotPositions[i].transform.position, cardSlotPositions[i].transform.rotation, cardSlotPositions[i].transform);
-                Debug.Log("instantiated gameobject");
-                break;
+                if (cardSlot[i] == null)
+                {
+                    //Debug.Log(cardSlot[i] + "   " + cardSlotPositions[i]);
+                    cardSlot[i] = Instantiate(cardItem, cardSlotPositions[i].transform.position, cardSlotPositions[i].transform.rotation, cardSlotPositions[i].transform);
+
+                    cardSlot[i].GetComponent<Card>().cardIndex = card;
+                    cardSlot[i].GetComponent<Card>().Initialiaze();
+                    Debug.Log("instantiated gameobject");
+
+
+                    break;
+                }
+
             }
 
         }
