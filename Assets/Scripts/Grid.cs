@@ -38,7 +38,7 @@ public class Grid : MonoBehaviour
                 {
                     
                     DestroyCard();
-                    Debug.Log(player.playerMoves);
+                    //Debug.Log(player.playerMoves);
 
                 }
                 break;
@@ -50,7 +50,7 @@ public class Grid : MonoBehaviour
                 {
                     
                     DestroyCard();
-                    Debug.Log(player.playerMoves);
+                    //Debug.Log(player.playerMoves);
 
                 }
                 break;
@@ -65,7 +65,7 @@ public class Grid : MonoBehaviour
                     {
                         
                         DestroyCard();
-                        Debug.Log(player.playerMoves);
+                        //Debug.Log(player.playerMoves);
 
                     }
 
@@ -84,7 +84,7 @@ public class Grid : MonoBehaviour
                     {
                         
                         DestroyCard();
-                        Debug.Log(player.playerMoves);
+                        //Debug.Log(player.playerMoves);
 
                     }
 
