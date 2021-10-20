@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     [HideInInspector] public GameObject currentCard;
 
-    int playerCoins = 5;
+    [HideInInspector] public int playerCoins = 5;
 
     public Text coinsUI;
 
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 
         //Debug.Log(currentCardIndex);
 
-        coinsUI.text = "Coins: " + playerCoins;
+        coinsUI.text = "" + playerCoins;
     }
 
     public void BuyCard(string s) //each input is seperated by a comma

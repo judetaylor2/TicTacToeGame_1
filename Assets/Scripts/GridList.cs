@@ -14,12 +14,6 @@ public class GridList : MonoBehaviour
     public GameObject winScreen;
     public Text winText;
 
-    
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         //read new values each turn
@@ -89,7 +83,7 @@ public class GridList : MonoBehaviour
                     //player O wins
                     Debug.Log("Player O wins");
                     winScreen.SetActive(true);
-                    winText.text = "Player X wins!";
+                    winText.text = "Player O wins!";
                 }
             }
         }
@@ -144,12 +138,6 @@ public class GridList : MonoBehaviour
                     winText.text = "Player X wins!";
                 }
             }
-        }
-
-        
-        //diagonal check
-
-
-   
+        } 
     }
 }
